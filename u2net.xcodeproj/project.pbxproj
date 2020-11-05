@@ -22,6 +22,7 @@
 		D45796F32553D76100ED6C7F /* u2net_opset11.onnx in Resources */ = {isa = PBXBuildFile; fileRef = D45796F12553D76000ED6C7F /* u2net_opset11.onnx */; };
 		D45796F62553E8BA00ED6C7F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45796F52553E8BA00ED6C7F /* Accelerate.framework */; };
 		D45796F82553E8BE00ED6C7F /* MetalPerformanceShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45796F72553E8BE00ED6C7F /* MetalPerformanceShaders.framework */; };
+		D45796FC2553F40F00ED6C7F /* input2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D45796FB2553F40F00ED6C7F /* input2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		D45796F12553D76000ED6C7F /* u2net_opset11.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; path = u2net_opset11.onnx; sourceTree = "<group>"; };
 		D45796F52553E8BA00ED6C7F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		D45796F72553E8BE00ED6C7F /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = SDKROOT; };
+		D45796FB2553F40F00ED6C7F /* input2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = input2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				D45796BD2553D25A00ED6C7F /* Info.plist */,
 				D45796BE2553D25A00ED6C7F /* main.m */,
 				D45796E12553D34800ED6C7F /* input.png */,
+				D45796FB2553F40F00ED6C7F /* input2.jpg */,
 				D45796F12553D76000ED6C7F /* u2net_opset11.onnx */,
 				D45796F02553D75300ED6C7F /* u2net_opset11.prototxt */,
 				D45796E32553D69C00ED6C7F /* ailia-1.2.4-xc7.a */,
@@ -286,6 +289,7 @@
 				D45796E22553D34800ED6C7F /* input.png in Resources */,
 				D45796BC2553D25A00ED6C7F /* LaunchScreen.storyboard in Resources */,
 				D45796F22553D76100ED6C7F /* u2net_opset11.prototxt in Resources */,
+				D45796FC2553F40F00ED6C7F /* input2.jpg in Resources */,
 				D45796F32553D76100ED6C7F /* u2net_opset11.onnx in Resources */,
 				D45796B92553D25A00ED6C7F /* Assets.xcassets in Resources */,
 				D45796B72553D25800ED6C7F /* Main.storyboard in Resources */,

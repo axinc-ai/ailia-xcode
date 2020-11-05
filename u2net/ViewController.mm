@@ -10,6 +10,7 @@
 
 #include "ailia.h"
 #include <vector>
+#include <algorithm>
 
 #define PRINT_ERR printf
 #define PRINT_OUT printf
@@ -110,17 +111,35 @@ static int preprocess(float *dst,unsigned int dst_width,unsigned int dst_height,
         }
     }
     
+    const float mean[3] = {0.485, 0.456, 0.406};
+    const float std[3] = {0.229, 0.224, 0.225};
+
+    //src : channel last (bgr order)
+    //dst : channel first (bgr order)
+
     for(int y=0;y<dst_height;y++){
         for(int x=0;x<dst_width;x++){
-            //channel last to channel first
+            float sx_f=x*src_width/dst_width;
+            float sy_f=y*src_height/dst_height;
+            
+            int sx1=(int)sx_f;
+            int sy1=(int)sy_f;
+            int sx2=((sx1+1) < (src_width -1)) ? sx1+1:src_width-1;
+            int sy2=((sy1+1) < (src_height-1)) ? sy1+1:src_height-1;
 
-            //nearest neighbor
-            int sx=x*src_width/dst_width;
-            int sy=y*src_height/dst_height;
-
-            dst[y*dst_width+x+0*dst_width*dst_height]=(1.0*src[sy*src_width*4+sx*4+0]/max_value - 0.485) / 0.229;
-            dst[y*dst_width+x+1*dst_width*dst_height]=(1.0*src[sy*src_width*4+sx*4+1]/max_value - 0.456) / 0.224;
-            dst[y*dst_width+x+2*dst_width*dst_height]=(1.0*src[sy*src_width*4+sx*4+2]/max_value - 0.406) / 0.225;
+            int a=sx_f-sx1;
+            int b=sy_f-sy1;
+            
+            for(int i=0;i<3;i++){
+                //bilinear
+                unsigned char v1=src[sy1*src_width*4+sx1*4+i];
+                unsigned char v2=src[sy1*src_width*4+sx2*4+i];
+                unsigned char v3=src[sy2*src_width*4+sx1*4+i];
+                unsigned char v4=src[sy2*src_width*4+sx2*4+i];
+                unsigned char v=(v1*(1-a)+v2*a)*(1-b)+(v3*(1-a)+v4*a)*b;
+                
+                dst[y*dst_width+x+i*dst_width*dst_height]=(1.0*v/max_value - mean[i]) / std[i];
+            }
         }
     }
 
@@ -164,6 +183,7 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
 
     // Load image
     UIImage *img = [UIImage imageNamed:@"input.png"];
+    //UIImage *img = [UIImage imageNamed:@"input2.jpg"];
 
     // Get data buffer from loaded image
     CGImageRef image = [img CGImage];
