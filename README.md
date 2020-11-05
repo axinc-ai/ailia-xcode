@@ -19,3 +19,8 @@ Layout
 ./u2net/u2net_opset11.onnx
 ./u2net/u2net_opset11.prototxt
 ```
+## Description
+
+ailia SDK was implemented in ViewController.m.
+
+Calculate alpha value from UIImage.
