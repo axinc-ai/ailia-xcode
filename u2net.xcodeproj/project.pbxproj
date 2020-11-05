@@ -16,6 +16,11 @@
 		D45796BF2553D25A00ED6C7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796BE2553D25A00ED6C7F /* main.m */; };
 		D45796C92553D25A00ED6C7F /* u2netTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796C82553D25A00ED6C7F /* u2netTests.m */; };
 		D45796D42553D25A00ED6C7F /* u2netUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796D32553D25A00ED6C7F /* u2netUITests.m */; };
+		D45796E22553D34800ED6C7F /* input.png in Resources */ = {isa = PBXBuildFile; fileRef = D45796E12553D34800ED6C7F /* input.png */; };
+		D45796E62553D69C00ED6C7F /* ailia-1.2.4-xc7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D45796E32553D69C00ED6C7F /* ailia-1.2.4-xc7.a */; };
+		D45796EF2553D6F000ED6C7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796EE2553D6F000ED6C7F /* ViewController.m */; };
+		D45796F22553D76100ED6C7F /* u2net_opset11.prototxt in Resources */ = {isa = PBXBuildFile; fileRef = D45796F02553D75300ED6C7F /* u2net_opset11.prototxt */; };
+		D45796F32553D76100ED6C7F /* u2net_opset11.onnx in Resources */ = {isa = PBXBuildFile; fileRef = D45796F12553D76000ED6C7F /* u2net_opset11.onnx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,18 @@
 		D45796CF2553D25A00ED6C7F /* u2netUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = u2netUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45796D32553D25A00ED6C7F /* u2netUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = u2netUITests.m; sourceTree = "<group>"; };
 		D45796D52553D25A00ED6C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45796E12553D34800ED6C7F /* input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input.png; sourceTree = "<group>"; };
+		D45796E32553D69C00ED6C7F /* ailia-1.2.4-xc7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "ailia-1.2.4-xc7.a"; sourceTree = "<group>"; };
+		D45796E72553D6A700ED6C7F /* ailia_classifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_classifier.h; sourceTree = "<group>"; };
+		D45796E82553D6A700ED6C7F /* ailia_feature_extractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_feature_extractor.h; sourceTree = "<group>"; };
+		D45796E92553D6A800ED6C7F /* ailia_pose_estimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_pose_estimator.h; sourceTree = "<group>"; };
+		D45796EA2553D6A900ED6C7F /* ailia_detector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_detector.h; sourceTree = "<group>"; };
+		D45796EB2553D6A900ED6C7F /* ailia_format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_format.h; sourceTree = "<group>"; };
+		D45796EC2553D6AA00ED6C7F /* ailia_call.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_call.h; sourceTree = "<group>"; };
+		D45796ED2553D6AA00ED6C7F /* ailia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia.h; sourceTree = "<group>"; };
+		D45796EE2553D6F000ED6C7F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D45796F02553D75300ED6C7F /* u2net_opset11.prototxt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = u2net_opset11.prototxt; sourceTree = "<group>"; };
+		D45796F12553D76000ED6C7F /* u2net_opset11.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; path = u2net_opset11.onnx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45796E62553D69C00ED6C7F /* ailia-1.2.4-xc7.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,12 +127,24 @@
 				D45796AF2553D25800ED6C7F /* SceneDelegate.h */,
 				D45796B02553D25800ED6C7F /* SceneDelegate.m */,
 				D45796B22553D25800ED6C7F /* ViewController.h */,
+				D45796EE2553D6F000ED6C7F /* ViewController.m */,
+				D45796EC2553D6AA00ED6C7F /* ailia_call.h */,
+				D45796E72553D6A700ED6C7F /* ailia_classifier.h */,
+				D45796EA2553D6A900ED6C7F /* ailia_detector.h */,
+				D45796E82553D6A700ED6C7F /* ailia_feature_extractor.h */,
+				D45796EB2553D6A900ED6C7F /* ailia_format.h */,
+				D45796E92553D6A800ED6C7F /* ailia_pose_estimator.h */,
+				D45796ED2553D6AA00ED6C7F /* ailia.h */,
 				D45796B32553D25800ED6C7F /* ViewController.m */,
 				D45796B52553D25800ED6C7F /* Main.storyboard */,
 				D45796B82553D25A00ED6C7F /* Assets.xcassets */,
 				D45796BA2553D25A00ED6C7F /* LaunchScreen.storyboard */,
 				D45796BD2553D25A00ED6C7F /* Info.plist */,
 				D45796BE2553D25A00ED6C7F /* main.m */,
+				D45796E12553D34800ED6C7F /* input.png */,
+				D45796F12553D76000ED6C7F /* u2net_opset11.onnx */,
+				D45796F02553D75300ED6C7F /* u2net_opset11.prototxt */,
+				D45796E32553D69C00ED6C7F /* ailia-1.2.4-xc7.a */,
 			);
 			path = u2net;
 			sourceTree = "<group>";
@@ -240,7 +270,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45796E22553D34800ED6C7F /* input.png in Resources */,
 				D45796BC2553D25A00ED6C7F /* LaunchScreen.storyboard in Resources */,
+				D45796F22553D76100ED6C7F /* u2net_opset11.prototxt in Resources */,
+				D45796F32553D76100ED6C7F /* u2net_opset11.onnx in Resources */,
 				D45796B92553D25A00ED6C7F /* Assets.xcassets in Resources */,
 				D45796B72553D25800ED6C7F /* Main.storyboard in Resources */,
 			);
@@ -271,6 +304,7 @@
 				D45796AE2553D25800ED6C7F /* AppDelegate.m in Sources */,
 				D45796BF2553D25A00ED6C7F /* main.m in Sources */,
 				D45796B12553D25800ED6C7F /* SceneDelegate.m in Sources */,
+				D45796EF2553D6F000ED6C7F /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +480,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/u2net",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.axinc.u2net;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,6 +500,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/u2net",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.axinc.u2net;
 				PRODUCT_NAME = "$(TARGET_NAME)";
