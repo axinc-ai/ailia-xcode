@@ -2,7 +2,7 @@
 //  u2netTests.m
 //  u2netTests
 //
-//  Created by 客野一樹 on 2020/11/05.
+//  Created by ax Inc. on 2020/11/05.
 //  Copyright © 2020 ax Inc. All rights reserved.
 //
 

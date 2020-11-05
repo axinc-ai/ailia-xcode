@@ -2,7 +2,7 @@
 //  ViewController.m
 //  u2net
 //
-//  Created by 客野一樹 on 2020/11/05.
+//  Created by ax Inc. on 2020/11/05.
 //  Copyright © 2020 ax Inc. All rights reserved.
 //
 
@@ -112,8 +112,6 @@ static int preprocess(float *dst,unsigned int dst_width,unsigned int dst_height,
         }
     }
     
-    printf("%d ",max_value);
-
     for(int y=0;y<dst_height;y++){
         int sy=y*src_height/dst_height;
         for(int x=0;x<dst_width;x++){
@@ -144,8 +142,6 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
         }
     }
     
-    printf("%f %f ",min,max);
-
     for(int y=0;y<dst_height;y++){
         int sy=y*src_height/dst_height;
         for(int x=0;x<dst_width;x++){
