@@ -164,13 +164,28 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
     
     for(int y=0;y<dst_height;y++){
         for(int x=0;x<dst_width;x++){
-            //nearest neighbor
-            int sx=x*src_width/dst_width;
-            int sy=y*src_height/dst_height;
+            //bilinear
+            float sx_f=x*src_width/dst_width;
+            float sy_f=y*src_height/dst_height;
+            
+            int sx1=(int)sx_f;
+            int sy1=(int)sy_f;
+            int sx2=((sx1+1) < (src_width -1)) ? sx1+1:src_width-1;
+            int sy2=((sy1+1) < (src_height-1)) ? sy1+1:src_height-1;
 
-            float alpha_value = ((src[sy*src_width+sx]-min) / (max-min));
-            for(int rgb=0;rgb<3;rgb++){
-                dst[y*dst_width*4+x*4+rgb] *= alpha_value;
+            int a=sx_f-sx1;
+            int b=sy_f-sy1;
+
+            float v1=src[sy1*src_width+sx1];
+            float v2=src[sy1*src_width+sx2];
+            float v3=src[sy2*src_width+sx1];
+            float v4=src[sy2*src_width+sx2];
+            float v=(v1*(1-a)+v2*a)*(1-b)+(v3*(1-a)+v4*a)*b;
+
+            float alpha_value = ((v-min) / (max-min));
+
+            for(int i=0;i<3;i++){
+                dst[y*dst_width*4+x*4+i] *= alpha_value;
             }
         }
     }
