@@ -29,6 +29,8 @@ Expected Layout
 
 Perform background cropping on the input image using u2net.
 
+![demo](demo.png)
+
 ## Implementation Detail
 
 ailia SDK was implemented in [ViewController.mm](./u2net/ViewController.mm).
