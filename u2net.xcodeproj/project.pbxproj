@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D45796AE2553D25800ED6C7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796AD2553D25800ED6C7F /* AppDelegate.m */; };
 		D45796B12553D25800ED6C7F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796B02553D25800ED6C7F /* SceneDelegate.m */; };
-		D45796B42553D25800ED6C7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796B32553D25800ED6C7F /* ViewController.m */; };
+		D45796B42553D25800ED6C7F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D45796B32553D25800ED6C7F /* ViewController.mm */; };
 		D45796B72553D25800ED6C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45796B52553D25800ED6C7F /* Main.storyboard */; };
 		D45796B92553D25A00ED6C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45796B82553D25A00ED6C7F /* Assets.xcassets */; };
 		D45796BC2553D25A00ED6C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45796BA2553D25A00ED6C7F /* LaunchScreen.storyboard */; };
@@ -18,9 +18,10 @@
 		D45796D42553D25A00ED6C7F /* u2netUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796D32553D25A00ED6C7F /* u2netUITests.m */; };
 		D45796E22553D34800ED6C7F /* input.png in Resources */ = {isa = PBXBuildFile; fileRef = D45796E12553D34800ED6C7F /* input.png */; };
 		D45796E62553D69C00ED6C7F /* ailia-1.2.4-xc7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D45796E32553D69C00ED6C7F /* ailia-1.2.4-xc7.a */; };
-		D45796EF2553D6F000ED6C7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45796EE2553D6F000ED6C7F /* ViewController.m */; };
 		D45796F22553D76100ED6C7F /* u2net_opset11.prototxt in Resources */ = {isa = PBXBuildFile; fileRef = D45796F02553D75300ED6C7F /* u2net_opset11.prototxt */; };
 		D45796F32553D76100ED6C7F /* u2net_opset11.onnx in Resources */ = {isa = PBXBuildFile; fileRef = D45796F12553D76000ED6C7F /* u2net_opset11.onnx */; };
+		D45796F62553E8BA00ED6C7F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45796F52553E8BA00ED6C7F /* Accelerate.framework */; };
+		D45796F82553E8BE00ED6C7F /* MetalPerformanceShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45796F72553E8BE00ED6C7F /* MetalPerformanceShaders.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,7 @@
 		D45796AF2553D25800ED6C7F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		D45796B02553D25800ED6C7F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D45796B22553D25800ED6C7F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D45796B32553D25800ED6C7F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D45796B32553D25800ED6C7F /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		D45796B62553D25800ED6C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D45796B82553D25A00ED6C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D45796BB2553D25A00ED6C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,9 +69,10 @@
 		D45796EB2553D6A900ED6C7F /* ailia_format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_format.h; sourceTree = "<group>"; };
 		D45796EC2553D6AA00ED6C7F /* ailia_call.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia_call.h; sourceTree = "<group>"; };
 		D45796ED2553D6AA00ED6C7F /* ailia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ailia.h; sourceTree = "<group>"; };
-		D45796EE2553D6F000ED6C7F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D45796F02553D75300ED6C7F /* u2net_opset11.prototxt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = u2net_opset11.prototxt; sourceTree = "<group>"; };
 		D45796F12553D76000ED6C7F /* u2net_opset11.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; path = u2net_opset11.onnx; sourceTree = "<group>"; };
+		D45796F52553E8BA00ED6C7F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D45796F72553E8BE00ED6C7F /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45796E62553D69C00ED6C7F /* ailia-1.2.4-xc7.a in Frameworks */,
+				D45796F82553E8BE00ED6C7F /* MetalPerformanceShaders.framework in Frameworks */,
+				D45796F62553E8BA00ED6C7F /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,7 @@
 				D45796C72553D25A00ED6C7F /* u2netTests */,
 				D45796D22553D25A00ED6C7F /* u2netUITests */,
 				D45796AA2553D25800ED6C7F /* Products */,
+				D45796F42553E8BA00ED6C7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +132,6 @@
 				D45796AF2553D25800ED6C7F /* SceneDelegate.h */,
 				D45796B02553D25800ED6C7F /* SceneDelegate.m */,
 				D45796B22553D25800ED6C7F /* ViewController.h */,
-				D45796EE2553D6F000ED6C7F /* ViewController.m */,
 				D45796EC2553D6AA00ED6C7F /* ailia_call.h */,
 				D45796E72553D6A700ED6C7F /* ailia_classifier.h */,
 				D45796EA2553D6A900ED6C7F /* ailia_detector.h */,
@@ -135,7 +139,7 @@
 				D45796EB2553D6A900ED6C7F /* ailia_format.h */,
 				D45796E92553D6A800ED6C7F /* ailia_pose_estimator.h */,
 				D45796ED2553D6AA00ED6C7F /* ailia.h */,
-				D45796B32553D25800ED6C7F /* ViewController.m */,
+				D45796B32553D25800ED6C7F /* ViewController.mm */,
 				D45796B52553D25800ED6C7F /* Main.storyboard */,
 				D45796B82553D25A00ED6C7F /* Assets.xcassets */,
 				D45796BA2553D25A00ED6C7F /* LaunchScreen.storyboard */,
@@ -165,6 +169,15 @@
 				D45796D52553D25A00ED6C7F /* Info.plist */,
 			);
 			path = u2netUITests;
+			sourceTree = "<group>";
+		};
+		D45796F42553E8BA00ED6C7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D45796F72553E8BE00ED6C7F /* MetalPerformanceShaders.framework */,
+				D45796F52553E8BA00ED6C7F /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,11 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D45796B42553D25800ED6C7F /* ViewController.m in Sources */,
+				D45796B42553D25800ED6C7F /* ViewController.mm in Sources */,
 				D45796AE2553D25800ED6C7F /* AppDelegate.m in Sources */,
 				D45796BF2553D25A00ED6C7F /* main.m in Sources */,
 				D45796B12553D25800ED6C7F /* SceneDelegate.m in Sources */,
-				D45796EF2553D6F000ED6C7F /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
