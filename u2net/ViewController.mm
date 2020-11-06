@@ -15,6 +15,8 @@
 #define PRINT_ERR printf
 #define PRINT_OUT printf
 
+#define LOW_MEMORY_MODE
+
 @interface ViewController ()
 
 @end
@@ -33,7 +35,7 @@ static void ailia_u2net(unsigned char *rgb,unsigned int width,unsigned int heigh
         PRINT_ERR("ailiaCreate failed %d\n", status);
         return;
     }
-
+    
     AILIAEnvironment *env_ptr = NULL;
     status = ailiaGetSelectedEnvironment(net, &env_ptr, AILIA_ENVIRONMENT_VERSION);
     if (status != AILIA_STATUS_SUCCESS) {
@@ -44,6 +46,15 @@ static void ailia_u2net(unsigned char *rgb,unsigned int width,unsigned int heigh
 
     PRINT_OUT("env_name: %s\n", env_ptr->name);
 
+#ifdef LOW_MEMORY_MODE
+    status = ailiaSetMemoryMode(net,AILIA_MEMORY_REDUCE_CONSTANT | AILIA_MEMORY_REDUCE_INTERSTAGE); //low memory mode
+    if (status != AILIA_STATUS_SUCCESS) {
+        PRINT_ERR("ailiaSetMemoryMode failed %d\n", status);
+        ailiaDestroy(net);
+        return;
+    }
+#endif
+    
     status = ailiaOpenStreamFile(net, [path1 cStringUsingEncoding:1]);
     if (status != AILIA_STATUS_SUCCESS) {
         PRINT_ERR("ailiaOpenStreamFile failed %d\n", status);
@@ -193,6 +204,11 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
     return 0;
 }
 
+static void releaseData(void *info, const void *data, size_t size)
+{
+    free((unsigned char *)data);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -205,7 +221,7 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
     NSUInteger width = CGImageGetWidth(image);
     NSUInteger height = CGImageGetHeight(image);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    std::vector<unsigned char> rawData = std::vector<unsigned char>(height * width * 4);
+    unsigned char *rawData=(unsigned char *)malloc(height * width * 4);
     NSUInteger bytesPerPixel = 4;
     NSUInteger bytesPerRow = bytesPerPixel * width;
     NSUInteger bitsPerComponent = 8;
@@ -223,8 +239,8 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
 
     CGColorSpaceRef colorspace      = CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo bitmapInfo         = CGImageGetBitmapInfo(image);
-    CGDataProviderRef provider      = CGDataProviderCreateWithData(NULL, &rawData[0], height * width * 4, NULL);
-
+    CGDataProviderRef provider      = CGDataProviderCreateWithData(NULL, &rawData[0], height * width * 4, releaseData);
+    
     CGImageRef newImageRef = CGImageCreate (
                               width,
                               height,
