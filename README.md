@@ -24,7 +24,9 @@ Expected Layout
 ./u2net.xcodeproj
 ./u2net/libailia.a
 ./u2net/u2net_opset11.onnx
+./u2net/u2net_opset11.prototxt
 ./u2net/midas_v21_small.onnx
+./u2net/midas_v21_small.prototxt
 ```
 
 ## Function
