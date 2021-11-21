@@ -8,9 +8,7 @@ Xcode 11.3
 
 ## Setup
 
-Download u2net_opset11.onnx and 
-
-to ./u2net folder.
+Download u2net_opset11.onnx and midas_v21_small.onnx to ./u2net folder.
 
 ```
 wget https://storage.googleapis.com/ailia-models/u2net/u2net_opset11.onnx
@@ -31,11 +29,11 @@ Expected Layout
 
 ## Function
 
-Perform background cropping on the input image using u2net.
+Perform background cropping on the input image using u2net. (#ifndef MIDAS)
 
 ![demo_u2net](demo_u2net.png)
 
-Perform depth estimation using midas.
+Perform depth estimation using midas. (#ifdef MIDAS)
 
 ![demo_u2net](demo_midas.png)
 
