@@ -29,7 +29,7 @@ Expected Layout
 
 ## Function
 
-Perform background cropping on the input image using u2net. (#ifndef MIDAS)
+Perform background removal using u2net. (#ifndef MIDAS)
 
 ![demo_u2net](demo_u2net.png)
 
