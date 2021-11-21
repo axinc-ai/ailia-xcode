@@ -17,7 +17,7 @@
 
 #define LOW_MEMORY_MODE
 
-#define MIDAS
+//#define MIDAS
 
 @interface ViewController ()
 
