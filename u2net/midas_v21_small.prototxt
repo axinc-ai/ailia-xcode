@@ -1,0 +1,8067 @@
+ir_version: 6
+producer_name: "pytorch"
+producer_version: "1.7"
+model_version: 0
+graph {
+  name: "torch-jit-export"
+  node {
+    input: "1211"
+    output: "492"
+    name: "ConstantOfShape_0"
+    op_type: "ConstantOfShape"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1212"
+    input: "492"
+    output: "493"
+    name: "Concat_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "494"
+    name: "Constant_2"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 2
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "493"
+    input: "494"
+    output: "495"
+    name: "Reshape_3"
+    op_type: "Reshape"
+  }
+  node {
+    output: "496"
+    name: "Constant_4"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "497"
+    name: "Constant_5"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "498"
+    name: "Constant_6"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "499"
+    name: "Constant_7"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "495"
+    input: "497"
+    input: "498"
+    input: "496"
+    input: "499"
+    output: "500"
+    name: "Slice_8"
+    op_type: "Slice"
+  }
+  node {
+    input: "500"
+    output: "501"
+    name: "Transpose_9"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    output: "502"
+    name: "Constant_10"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "501"
+    input: "502"
+    output: "503"
+    name: "Reshape_11"
+    op_type: "Reshape"
+  }
+  node {
+    input: "503"
+    output: "504"
+    name: "Cast_12"
+    op_type: "Cast"
+    attribute {
+      name: "to"
+      i: 7
+      type: INT
+    }
+  }
+  node {
+    output: "505"
+    name: "Constant_13"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "input"
+    input: "504"
+    input: "505"
+    output: "506"
+    name: "Pad_14"
+    op_type: "Pad"
+    attribute {
+      name: "mode"
+      s: "constant"
+      type: STRING
+    }
+  }
+  node {
+    input: "506"
+    input: "993"
+    input: "994"
+    output: "992"
+    name: "Conv_15"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "509"
+    name: "Constant_16"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "510"
+    name: "Constant_17"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "992"
+    input: "509"
+    input: "510"
+    output: "511"
+    name: "Clip_18"
+    op_type: "Clip"
+  }
+  node {
+    input: "511"
+    input: "996"
+    input: "997"
+    output: "995"
+    name: "Conv_19"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 32
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "514"
+    name: "Constant_20"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "515"
+    name: "Constant_21"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "995"
+    input: "514"
+    input: "515"
+    output: "516"
+    name: "Clip_22"
+    op_type: "Clip"
+  }
+  node {
+    input: "516"
+    input: "999"
+    input: "1000"
+    output: "998"
+    name: "Conv_23"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "998"
+    input: "1002"
+    input: "1003"
+    output: "1001"
+    name: "Conv_24"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "521"
+    name: "Constant_25"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "522"
+    name: "Constant_26"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1001"
+    input: "521"
+    input: "522"
+    output: "523"
+    name: "Clip_27"
+    op_type: "Clip"
+  }
+  node {
+    input: "1216"
+    output: "533"
+    name: "ConstantOfShape_28"
+    op_type: "ConstantOfShape"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1217"
+    input: "533"
+    output: "534"
+    name: "Concat_29"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "535"
+    name: "Constant_30"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 2
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "534"
+    input: "535"
+    output: "536"
+    name: "Reshape_31"
+    op_type: "Reshape"
+  }
+  node {
+    output: "537"
+    name: "Constant_32"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "538"
+    name: "Constant_33"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "539"
+    name: "Constant_34"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "540"
+    name: "Constant_35"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "536"
+    input: "538"
+    input: "539"
+    input: "537"
+    input: "540"
+    output: "541"
+    name: "Slice_36"
+    op_type: "Slice"
+  }
+  node {
+    input: "541"
+    output: "542"
+    name: "Transpose_37"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    output: "543"
+    name: "Constant_38"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "542"
+    input: "543"
+    output: "544"
+    name: "Reshape_39"
+    op_type: "Reshape"
+  }
+  node {
+    input: "544"
+    output: "545"
+    name: "Cast_40"
+    op_type: "Cast"
+    attribute {
+      name: "to"
+      i: 7
+      type: INT
+    }
+  }
+  node {
+    output: "546"
+    name: "Constant_41"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "523"
+    input: "545"
+    input: "546"
+    output: "547"
+    name: "Pad_42"
+    op_type: "Pad"
+    attribute {
+      name: "mode"
+      s: "constant"
+      type: STRING
+    }
+  }
+  node {
+    input: "547"
+    input: "1005"
+    input: "1006"
+    output: "1004"
+    name: "Conv_43"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 144
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "550"
+    name: "Constant_44"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "551"
+    name: "Constant_45"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1004"
+    input: "550"
+    input: "551"
+    output: "552"
+    name: "Clip_46"
+    op_type: "Clip"
+  }
+  node {
+    input: "552"
+    input: "1008"
+    input: "1009"
+    output: "1007"
+    name: "Conv_47"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1007"
+    input: "1011"
+    input: "1012"
+    output: "1010"
+    name: "Conv_48"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "557"
+    name: "Constant_49"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "558"
+    name: "Constant_50"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1010"
+    input: "557"
+    input: "558"
+    output: "559"
+    name: "Clip_51"
+    op_type: "Clip"
+  }
+  node {
+    input: "559"
+    input: "1014"
+    input: "1015"
+    output: "1013"
+    name: "Conv_52"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "562"
+    name: "Constant_53"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "563"
+    name: "Constant_54"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1013"
+    input: "562"
+    input: "563"
+    output: "564"
+    name: "Clip_55"
+    op_type: "Clip"
+  }
+  node {
+    input: "564"
+    input: "1017"
+    input: "1018"
+    output: "1016"
+    name: "Conv_56"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1016"
+    input: "1007"
+    output: "567"
+    name: "Add_57"
+    op_type: "Add"
+  }
+  node {
+    input: "567"
+    input: "1020"
+    input: "1021"
+    output: "1019"
+    name: "Conv_58"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "570"
+    name: "Constant_59"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "571"
+    name: "Constant_60"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1019"
+    input: "570"
+    input: "571"
+    output: "572"
+    name: "Clip_61"
+    op_type: "Clip"
+  }
+  node {
+    input: "572"
+    input: "1023"
+    input: "1024"
+    output: "1022"
+    name: "Conv_62"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "575"
+    name: "Constant_63"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "576"
+    name: "Constant_64"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1022"
+    input: "575"
+    input: "576"
+    output: "577"
+    name: "Clip_65"
+    op_type: "Clip"
+  }
+  node {
+    input: "577"
+    input: "1026"
+    input: "1027"
+    output: "1025"
+    name: "Conv_66"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1025"
+    input: "567"
+    output: "580"
+    name: "Add_67"
+    op_type: "Add"
+  }
+  node {
+    input: "580"
+    input: "1029"
+    input: "1030"
+    output: "1028"
+    name: "Conv_68"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "583"
+    name: "Constant_69"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "584"
+    name: "Constant_70"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1028"
+    input: "583"
+    input: "584"
+    output: "585"
+    name: "Clip_71"
+    op_type: "Clip"
+  }
+  node {
+    input: "1221"
+    output: "595"
+    name: "ConstantOfShape_72"
+    op_type: "ConstantOfShape"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1222"
+    input: "595"
+    output: "596"
+    name: "Concat_73"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "597"
+    name: "Constant_74"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 2
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "596"
+    input: "597"
+    output: "598"
+    name: "Reshape_75"
+    op_type: "Reshape"
+  }
+  node {
+    output: "599"
+    name: "Constant_76"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "600"
+    name: "Constant_77"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "601"
+    name: "Constant_78"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "602"
+    name: "Constant_79"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "598"
+    input: "600"
+    input: "601"
+    input: "599"
+    input: "602"
+    output: "603"
+    name: "Slice_80"
+    op_type: "Slice"
+  }
+  node {
+    input: "603"
+    output: "604"
+    name: "Transpose_81"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    output: "605"
+    name: "Constant_82"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "604"
+    input: "605"
+    output: "606"
+    name: "Reshape_83"
+    op_type: "Reshape"
+  }
+  node {
+    input: "606"
+    output: "607"
+    name: "Cast_84"
+    op_type: "Cast"
+    attribute {
+      name: "to"
+      i: 7
+      type: INT
+    }
+  }
+  node {
+    output: "608"
+    name: "Constant_85"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "585"
+    input: "607"
+    input: "608"
+    output: "609"
+    name: "Pad_86"
+    op_type: "Pad"
+    attribute {
+      name: "mode"
+      s: "constant"
+      type: STRING
+    }
+  }
+  node {
+    input: "609"
+    input: "1032"
+    input: "1033"
+    output: "1031"
+    name: "Conv_87"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "612"
+    name: "Constant_88"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "613"
+    name: "Constant_89"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1031"
+    input: "612"
+    input: "613"
+    output: "614"
+    name: "Clip_90"
+    op_type: "Clip"
+  }
+  node {
+    input: "614"
+    input: "1035"
+    input: "1036"
+    output: "1034"
+    name: "Conv_91"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1034"
+    input: "1038"
+    input: "1039"
+    output: "1037"
+    name: "Conv_92"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "619"
+    name: "Constant_93"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "620"
+    name: "Constant_94"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1037"
+    input: "619"
+    input: "620"
+    output: "621"
+    name: "Clip_95"
+    op_type: "Clip"
+  }
+  node {
+    input: "621"
+    input: "1041"
+    input: "1042"
+    output: "1040"
+    name: "Conv_96"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 288
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "624"
+    name: "Constant_97"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "625"
+    name: "Constant_98"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1040"
+    input: "624"
+    input: "625"
+    output: "626"
+    name: "Clip_99"
+    op_type: "Clip"
+  }
+  node {
+    input: "626"
+    input: "1044"
+    input: "1045"
+    output: "1043"
+    name: "Conv_100"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1043"
+    input: "1034"
+    output: "629"
+    name: "Add_101"
+    op_type: "Add"
+  }
+  node {
+    input: "629"
+    input: "1047"
+    input: "1048"
+    output: "1046"
+    name: "Conv_102"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "632"
+    name: "Constant_103"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "633"
+    name: "Constant_104"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1046"
+    input: "632"
+    input: "633"
+    output: "634"
+    name: "Clip_105"
+    op_type: "Clip"
+  }
+  node {
+    input: "634"
+    input: "1050"
+    input: "1051"
+    output: "1049"
+    name: "Conv_106"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 288
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "637"
+    name: "Constant_107"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "638"
+    name: "Constant_108"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1049"
+    input: "637"
+    input: "638"
+    output: "639"
+    name: "Clip_109"
+    op_type: "Clip"
+  }
+  node {
+    input: "639"
+    input: "1053"
+    input: "1054"
+    output: "1052"
+    name: "Conv_110"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1052"
+    input: "629"
+    output: "642"
+    name: "Add_111"
+    op_type: "Add"
+  }
+  node {
+    input: "642"
+    input: "1056"
+    input: "1057"
+    output: "1055"
+    name: "Conv_112"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "645"
+    name: "Constant_113"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "646"
+    name: "Constant_114"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1055"
+    input: "645"
+    input: "646"
+    output: "647"
+    name: "Clip_115"
+    op_type: "Clip"
+  }
+  node {
+    input: "1226"
+    output: "657"
+    name: "ConstantOfShape_116"
+    op_type: "ConstantOfShape"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1227"
+    input: "657"
+    output: "658"
+    name: "Concat_117"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "659"
+    name: "Constant_118"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 2
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "658"
+    input: "659"
+    output: "660"
+    name: "Reshape_119"
+    op_type: "Reshape"
+  }
+  node {
+    output: "661"
+    name: "Constant_120"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "662"
+    name: "Constant_121"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "663"
+    name: "Constant_122"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "664"
+    name: "Constant_123"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "660"
+    input: "662"
+    input: "663"
+    input: "661"
+    input: "664"
+    output: "665"
+    name: "Slice_124"
+    op_type: "Slice"
+  }
+  node {
+    input: "665"
+    output: "666"
+    name: "Transpose_125"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    output: "667"
+    name: "Constant_126"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "666"
+    input: "667"
+    output: "668"
+    name: "Reshape_127"
+    op_type: "Reshape"
+  }
+  node {
+    input: "668"
+    output: "669"
+    name: "Cast_128"
+    op_type: "Cast"
+    attribute {
+      name: "to"
+      i: 7
+      type: INT
+    }
+  }
+  node {
+    output: "670"
+    name: "Constant_129"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "647"
+    input: "669"
+    input: "670"
+    output: "671"
+    name: "Pad_130"
+    op_type: "Pad"
+    attribute {
+      name: "mode"
+      s: "constant"
+      type: STRING
+    }
+  }
+  node {
+    input: "671"
+    input: "1059"
+    input: "1060"
+    output: "1058"
+    name: "Conv_131"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 288
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "674"
+    name: "Constant_132"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "675"
+    name: "Constant_133"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1058"
+    input: "674"
+    input: "675"
+    output: "676"
+    name: "Clip_134"
+    op_type: "Clip"
+  }
+  node {
+    input: "676"
+    input: "1062"
+    input: "1063"
+    output: "1061"
+    name: "Conv_135"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1061"
+    input: "1065"
+    input: "1066"
+    output: "1064"
+    name: "Conv_136"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "681"
+    name: "Constant_137"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "682"
+    name: "Constant_138"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1064"
+    input: "681"
+    input: "682"
+    output: "683"
+    name: "Clip_139"
+    op_type: "Clip"
+  }
+  node {
+    input: "683"
+    input: "1068"
+    input: "1069"
+    output: "1067"
+    name: "Conv_140"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "686"
+    name: "Constant_141"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "687"
+    name: "Constant_142"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1067"
+    input: "686"
+    input: "687"
+    output: "688"
+    name: "Clip_143"
+    op_type: "Clip"
+  }
+  node {
+    input: "688"
+    input: "1071"
+    input: "1072"
+    output: "1070"
+    name: "Conv_144"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1070"
+    input: "1061"
+    output: "691"
+    name: "Add_145"
+    op_type: "Add"
+  }
+  node {
+    input: "691"
+    input: "1074"
+    input: "1075"
+    output: "1073"
+    name: "Conv_146"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "694"
+    name: "Constant_147"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "695"
+    name: "Constant_148"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1073"
+    input: "694"
+    input: "695"
+    output: "696"
+    name: "Clip_149"
+    op_type: "Clip"
+  }
+  node {
+    input: "696"
+    input: "1077"
+    input: "1078"
+    output: "1076"
+    name: "Conv_150"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "699"
+    name: "Constant_151"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "700"
+    name: "Constant_152"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1076"
+    input: "699"
+    input: "700"
+    output: "701"
+    name: "Clip_153"
+    op_type: "Clip"
+  }
+  node {
+    input: "701"
+    input: "1080"
+    input: "1081"
+    output: "1079"
+    name: "Conv_154"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1079"
+    input: "691"
+    output: "704"
+    name: "Add_155"
+    op_type: "Add"
+  }
+  node {
+    input: "704"
+    input: "1083"
+    input: "1084"
+    output: "1082"
+    name: "Conv_156"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "707"
+    name: "Constant_157"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "708"
+    name: "Constant_158"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1082"
+    input: "707"
+    input: "708"
+    output: "709"
+    name: "Clip_159"
+    op_type: "Clip"
+  }
+  node {
+    input: "709"
+    input: "1086"
+    input: "1087"
+    output: "1085"
+    name: "Conv_160"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "712"
+    name: "Constant_161"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "713"
+    name: "Constant_162"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1085"
+    input: "712"
+    input: "713"
+    output: "714"
+    name: "Clip_163"
+    op_type: "Clip"
+  }
+  node {
+    input: "714"
+    input: "1089"
+    input: "1090"
+    output: "1088"
+    name: "Conv_164"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1088"
+    input: "704"
+    output: "717"
+    name: "Add_165"
+    op_type: "Add"
+  }
+  node {
+    input: "717"
+    input: "1092"
+    input: "1093"
+    output: "1091"
+    name: "Conv_166"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "720"
+    name: "Constant_167"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "721"
+    name: "Constant_168"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1091"
+    input: "720"
+    input: "721"
+    output: "722"
+    name: "Clip_169"
+    op_type: "Clip"
+  }
+  node {
+    input: "722"
+    input: "1095"
+    input: "1096"
+    output: "1094"
+    name: "Conv_170"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "725"
+    name: "Constant_171"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "726"
+    name: "Constant_172"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1094"
+    input: "725"
+    input: "726"
+    output: "727"
+    name: "Clip_173"
+    op_type: "Clip"
+  }
+  node {
+    input: "727"
+    input: "1098"
+    input: "1099"
+    output: "1097"
+    name: "Conv_174"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1097"
+    input: "717"
+    output: "730"
+    name: "Add_175"
+    op_type: "Add"
+  }
+  node {
+    input: "730"
+    input: "1101"
+    input: "1102"
+    output: "1100"
+    name: "Conv_176"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "733"
+    name: "Constant_177"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "734"
+    name: "Constant_178"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1100"
+    input: "733"
+    input: "734"
+    output: "735"
+    name: "Clip_179"
+    op_type: "Clip"
+  }
+  node {
+    input: "735"
+    input: "1104"
+    input: "1105"
+    output: "1103"
+    name: "Conv_180"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "738"
+    name: "Constant_181"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "739"
+    name: "Constant_182"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1103"
+    input: "738"
+    input: "739"
+    output: "740"
+    name: "Clip_183"
+    op_type: "Clip"
+  }
+  node {
+    input: "740"
+    input: "1107"
+    input: "1108"
+    output: "1106"
+    name: "Conv_184"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1106"
+    input: "1110"
+    input: "1111"
+    output: "1109"
+    name: "Conv_185"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "745"
+    name: "Constant_186"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "746"
+    name: "Constant_187"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1109"
+    input: "745"
+    input: "746"
+    output: "747"
+    name: "Clip_188"
+    op_type: "Clip"
+  }
+  node {
+    input: "747"
+    input: "1113"
+    input: "1114"
+    output: "1112"
+    name: "Conv_189"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 816
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "750"
+    name: "Constant_190"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "751"
+    name: "Constant_191"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1112"
+    input: "750"
+    input: "751"
+    output: "752"
+    name: "Clip_192"
+    op_type: "Clip"
+  }
+  node {
+    input: "752"
+    input: "1116"
+    input: "1117"
+    output: "1115"
+    name: "Conv_193"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1115"
+    input: "1106"
+    output: "755"
+    name: "Add_194"
+    op_type: "Add"
+  }
+  node {
+    input: "755"
+    input: "1119"
+    input: "1120"
+    output: "1118"
+    name: "Conv_195"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "758"
+    name: "Constant_196"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "759"
+    name: "Constant_197"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1118"
+    input: "758"
+    input: "759"
+    output: "760"
+    name: "Clip_198"
+    op_type: "Clip"
+  }
+  node {
+    input: "760"
+    input: "1122"
+    input: "1123"
+    output: "1121"
+    name: "Conv_199"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 816
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "763"
+    name: "Constant_200"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "764"
+    name: "Constant_201"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1121"
+    input: "763"
+    input: "764"
+    output: "765"
+    name: "Clip_202"
+    op_type: "Clip"
+  }
+  node {
+    input: "765"
+    input: "1125"
+    input: "1126"
+    output: "1124"
+    name: "Conv_203"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1124"
+    input: "755"
+    output: "768"
+    name: "Add_204"
+    op_type: "Add"
+  }
+  node {
+    input: "768"
+    input: "1128"
+    input: "1129"
+    output: "1127"
+    name: "Conv_205"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "771"
+    name: "Constant_206"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "772"
+    name: "Constant_207"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1127"
+    input: "771"
+    input: "772"
+    output: "773"
+    name: "Clip_208"
+    op_type: "Clip"
+  }
+  node {
+    input: "773"
+    input: "1131"
+    input: "1132"
+    output: "1130"
+    name: "Conv_209"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 816
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "776"
+    name: "Constant_210"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "777"
+    name: "Constant_211"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1130"
+    input: "776"
+    input: "777"
+    output: "778"
+    name: "Clip_212"
+    op_type: "Clip"
+  }
+  node {
+    input: "778"
+    input: "1134"
+    input: "1135"
+    output: "1133"
+    name: "Conv_213"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1133"
+    input: "768"
+    output: "781"
+    name: "Add_214"
+    op_type: "Add"
+  }
+  node {
+    input: "781"
+    input: "1137"
+    input: "1138"
+    output: "1136"
+    name: "Conv_215"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "784"
+    name: "Constant_216"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "785"
+    name: "Constant_217"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1136"
+    input: "784"
+    input: "785"
+    output: "786"
+    name: "Clip_218"
+    op_type: "Clip"
+  }
+  node {
+    input: "786"
+    input: "1140"
+    input: "1141"
+    output: "1139"
+    name: "Conv_219"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 816
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "789"
+    name: "Constant_220"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "790"
+    name: "Constant_221"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1139"
+    input: "789"
+    input: "790"
+    output: "791"
+    name: "Clip_222"
+    op_type: "Clip"
+  }
+  node {
+    input: "791"
+    input: "1143"
+    input: "1144"
+    output: "1142"
+    name: "Conv_223"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1142"
+    input: "781"
+    output: "794"
+    name: "Add_224"
+    op_type: "Add"
+  }
+  node {
+    input: "794"
+    input: "1146"
+    input: "1147"
+    output: "1145"
+    name: "Conv_225"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "797"
+    name: "Constant_226"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "798"
+    name: "Constant_227"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1145"
+    input: "797"
+    input: "798"
+    output: "799"
+    name: "Clip_228"
+    op_type: "Clip"
+  }
+  node {
+    input: "1231"
+    output: "809"
+    name: "ConstantOfShape_229"
+    op_type: "ConstantOfShape"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1232"
+    input: "809"
+    output: "810"
+    name: "Concat_230"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "811"
+    name: "Constant_231"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 2
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "810"
+    input: "811"
+    output: "812"
+    name: "Reshape_232"
+    op_type: "Reshape"
+  }
+  node {
+    output: "813"
+    name: "Constant_233"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "814"
+    name: "Constant_234"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "815"
+    name: "Constant_235"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "816"
+    name: "Constant_236"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "812"
+    input: "814"
+    input: "815"
+    input: "813"
+    input: "816"
+    output: "817"
+    name: "Slice_237"
+    op_type: "Slice"
+  }
+  node {
+    input: "817"
+    output: "818"
+    name: "Transpose_238"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    output: "819"
+    name: "Constant_239"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: 7
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "818"
+    input: "819"
+    output: "820"
+    name: "Reshape_240"
+    op_type: "Reshape"
+  }
+  node {
+    input: "820"
+    output: "821"
+    name: "Cast_241"
+    op_type: "Cast"
+    attribute {
+      name: "to"
+      i: 7
+      type: INT
+    }
+  }
+  node {
+    output: "822"
+    name: "Constant_242"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "799"
+    input: "821"
+    input: "822"
+    output: "823"
+    name: "Pad_243"
+    op_type: "Pad"
+    attribute {
+      name: "mode"
+      s: "constant"
+      type: STRING
+    }
+  }
+  node {
+    input: "823"
+    input: "1149"
+    input: "1150"
+    output: "1148"
+    name: "Conv_244"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 816
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "826"
+    name: "Constant_245"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "827"
+    name: "Constant_246"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1148"
+    input: "826"
+    input: "827"
+    output: "828"
+    name: "Clip_247"
+    op_type: "Clip"
+  }
+  node {
+    input: "828"
+    input: "1152"
+    input: "1153"
+    output: "1151"
+    name: "Conv_248"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1151"
+    input: "1155"
+    input: "1156"
+    output: "1154"
+    name: "Conv_249"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "833"
+    name: "Constant_250"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "834"
+    name: "Constant_251"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1154"
+    input: "833"
+    input: "834"
+    output: "835"
+    name: "Clip_252"
+    op_type: "Clip"
+  }
+  node {
+    input: "835"
+    input: "1158"
+    input: "1159"
+    output: "1157"
+    name: "Conv_253"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1392
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "838"
+    name: "Constant_254"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "839"
+    name: "Constant_255"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1157"
+    input: "838"
+    input: "839"
+    output: "840"
+    name: "Clip_256"
+    op_type: "Clip"
+  }
+  node {
+    input: "840"
+    input: "1161"
+    input: "1162"
+    output: "1160"
+    name: "Conv_257"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1160"
+    input: "1151"
+    output: "843"
+    name: "Add_258"
+    op_type: "Add"
+  }
+  node {
+    input: "843"
+    input: "1164"
+    input: "1165"
+    output: "1163"
+    name: "Conv_259"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "846"
+    name: "Constant_260"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "847"
+    name: "Constant_261"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1163"
+    input: "846"
+    input: "847"
+    output: "848"
+    name: "Clip_262"
+    op_type: "Clip"
+  }
+  node {
+    input: "848"
+    input: "1167"
+    input: "1168"
+    output: "1166"
+    name: "Conv_263"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1392
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "851"
+    name: "Constant_264"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "852"
+    name: "Constant_265"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1166"
+    input: "851"
+    input: "852"
+    output: "853"
+    name: "Clip_266"
+    op_type: "Clip"
+  }
+  node {
+    input: "853"
+    input: "1170"
+    input: "1171"
+    output: "1169"
+    name: "Conv_267"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1169"
+    input: "843"
+    output: "856"
+    name: "Add_268"
+    op_type: "Add"
+  }
+  node {
+    input: "856"
+    input: "1173"
+    input: "1174"
+    output: "1172"
+    name: "Conv_269"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "859"
+    name: "Constant_270"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "860"
+    name: "Constant_271"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1172"
+    input: "859"
+    input: "860"
+    output: "861"
+    name: "Clip_272"
+    op_type: "Clip"
+  }
+  node {
+    input: "861"
+    input: "1176"
+    input: "1177"
+    output: "1175"
+    name: "Conv_273"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1392
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "864"
+    name: "Constant_274"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "865"
+    name: "Constant_275"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1175"
+    input: "864"
+    input: "865"
+    output: "866"
+    name: "Clip_276"
+    op_type: "Clip"
+  }
+  node {
+    input: "866"
+    input: "1179"
+    input: "1180"
+    output: "1178"
+    name: "Conv_277"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1178"
+    input: "856"
+    output: "869"
+    name: "Add_278"
+    op_type: "Add"
+  }
+  node {
+    input: "869"
+    input: "1182"
+    input: "1183"
+    output: "1181"
+    name: "Conv_279"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "872"
+    name: "Constant_280"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "873"
+    name: "Constant_281"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1181"
+    input: "872"
+    input: "873"
+    output: "874"
+    name: "Clip_282"
+    op_type: "Clip"
+  }
+  node {
+    input: "874"
+    input: "1185"
+    input: "1186"
+    output: "1184"
+    name: "Conv_283"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1392
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "877"
+    name: "Constant_284"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "878"
+    name: "Constant_285"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1184"
+    input: "877"
+    input: "878"
+    output: "879"
+    name: "Clip_286"
+    op_type: "Clip"
+  }
+  node {
+    input: "879"
+    input: "1188"
+    input: "1189"
+    output: "1187"
+    name: "Conv_287"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1187"
+    input: "869"
+    output: "882"
+    name: "Add_288"
+    op_type: "Add"
+  }
+  node {
+    input: "882"
+    input: "1191"
+    input: "1192"
+    output: "1190"
+    name: "Conv_289"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "885"
+    name: "Constant_290"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "886"
+    name: "Constant_291"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1190"
+    input: "885"
+    input: "886"
+    output: "887"
+    name: "Clip_292"
+    op_type: "Clip"
+  }
+  node {
+    input: "887"
+    input: "1194"
+    input: "1195"
+    output: "1193"
+    name: "Conv_293"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1392
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "890"
+    name: "Constant_294"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "891"
+    name: "Constant_295"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1193"
+    input: "890"
+    input: "891"
+    output: "892"
+    name: "Clip_296"
+    op_type: "Clip"
+  }
+  node {
+    input: "892"
+    input: "1197"
+    input: "1198"
+    output: "1196"
+    name: "Conv_297"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1196"
+    input: "882"
+    output: "895"
+    name: "Add_298"
+    op_type: "Add"
+  }
+  node {
+    input: "895"
+    input: "1200"
+    input: "1201"
+    output: "1199"
+    name: "Conv_299"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "898"
+    name: "Constant_300"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "899"
+    name: "Constant_301"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1199"
+    input: "898"
+    input: "899"
+    output: "900"
+    name: "Clip_302"
+    op_type: "Clip"
+  }
+  node {
+    input: "900"
+    input: "1203"
+    input: "1204"
+    output: "1202"
+    name: "Conv_303"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1392
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "903"
+    name: "Constant_304"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "904"
+    name: "Constant_305"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "1202"
+    input: "903"
+    input: "904"
+    output: "905"
+    name: "Clip_306"
+    op_type: "Clip"
+  }
+  node {
+    input: "905"
+    input: "1206"
+    input: "1207"
+    output: "1205"
+    name: "Conv_307"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "580"
+    input: "scratch.layer1_rn.weight"
+    output: "908"
+    name: "Conv_308"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "642"
+    input: "scratch.layer2_rn.weight"
+    output: "909"
+    name: "Conv_309"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "794"
+    input: "scratch.layer3_rn.weight"
+    output: "910"
+    name: "Conv_310"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "1205"
+    input: "scratch.layer4_rn.weight"
+    output: "911"
+    name: "Conv_311"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "911"
+    output: "912"
+    name: "Relu_312"
+    op_type: "Relu"
+  }
+  node {
+    input: "912"
+    input: "scratch.refinenet4.resConfUnit2.conv1.weight"
+    input: "scratch.refinenet4.resConfUnit2.conv1.bias"
+    output: "913"
+    name: "Conv_313"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "913"
+    output: "914"
+    name: "Relu_314"
+    op_type: "Relu"
+  }
+  node {
+    input: "914"
+    input: "scratch.refinenet4.resConfUnit2.conv2.weight"
+    input: "scratch.refinenet4.resConfUnit2.conv2.bias"
+    output: "915"
+    name: "Conv_315"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "915"
+    input: "911"
+    output: "916"
+    name: "Add_316"
+    op_type: "Add"
+  }
+  node {
+    output: "920"
+    name: "Constant_317"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 0
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "916"
+    input: "920"
+    input: "1233"
+    output: "921"
+    name: "Resize_318"
+    op_type: "Resize"
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "align_corners"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+  }
+  node {
+    input: "921"
+    input: "scratch.refinenet4.out_conv.weight"
+    input: "scratch.refinenet4.out_conv.bias"
+    output: "922"
+    name: "Conv_319"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "910"
+    output: "923"
+    name: "Relu_320"
+    op_type: "Relu"
+  }
+  node {
+    input: "923"
+    input: "scratch.refinenet3.resConfUnit1.conv1.weight"
+    input: "scratch.refinenet3.resConfUnit1.conv1.bias"
+    output: "924"
+    name: "Conv_321"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "924"
+    output: "925"
+    name: "Relu_322"
+    op_type: "Relu"
+  }
+  node {
+    input: "925"
+    input: "scratch.refinenet3.resConfUnit1.conv2.weight"
+    input: "scratch.refinenet3.resConfUnit1.conv2.bias"
+    output: "926"
+    name: "Conv_323"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "926"
+    input: "910"
+    output: "927"
+    name: "Add_324"
+    op_type: "Add"
+  }
+  node {
+    input: "922"
+    input: "927"
+    output: "928"
+    name: "Add_325"
+    op_type: "Add"
+  }
+  node {
+    input: "928"
+    output: "929"
+    name: "Relu_326"
+    op_type: "Relu"
+  }
+  node {
+    input: "929"
+    input: "scratch.refinenet3.resConfUnit2.conv1.weight"
+    input: "scratch.refinenet3.resConfUnit2.conv1.bias"
+    output: "930"
+    name: "Conv_327"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "930"
+    output: "931"
+    name: "Relu_328"
+    op_type: "Relu"
+  }
+  node {
+    input: "931"
+    input: "scratch.refinenet3.resConfUnit2.conv2.weight"
+    input: "scratch.refinenet3.resConfUnit2.conv2.bias"
+    output: "932"
+    name: "Conv_329"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "932"
+    input: "928"
+    output: "933"
+    name: "Add_330"
+    op_type: "Add"
+  }
+  node {
+    output: "937"
+    name: "Constant_331"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 0
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "933"
+    input: "937"
+    input: "1234"
+    output: "938"
+    name: "Resize_332"
+    op_type: "Resize"
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "align_corners"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+  }
+  node {
+    input: "938"
+    input: "scratch.refinenet3.out_conv.weight"
+    input: "scratch.refinenet3.out_conv.bias"
+    output: "939"
+    name: "Conv_333"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "909"
+    output: "940"
+    name: "Relu_334"
+    op_type: "Relu"
+  }
+  node {
+    input: "940"
+    input: "scratch.refinenet2.resConfUnit1.conv1.weight"
+    input: "scratch.refinenet2.resConfUnit1.conv1.bias"
+    output: "941"
+    name: "Conv_335"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "941"
+    output: "942"
+    name: "Relu_336"
+    op_type: "Relu"
+  }
+  node {
+    input: "942"
+    input: "scratch.refinenet2.resConfUnit1.conv2.weight"
+    input: "scratch.refinenet2.resConfUnit1.conv2.bias"
+    output: "943"
+    name: "Conv_337"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "943"
+    input: "909"
+    output: "944"
+    name: "Add_338"
+    op_type: "Add"
+  }
+  node {
+    input: "939"
+    input: "944"
+    output: "945"
+    name: "Add_339"
+    op_type: "Add"
+  }
+  node {
+    input: "945"
+    output: "946"
+    name: "Relu_340"
+    op_type: "Relu"
+  }
+  node {
+    input: "946"
+    input: "scratch.refinenet2.resConfUnit2.conv1.weight"
+    input: "scratch.refinenet2.resConfUnit2.conv1.bias"
+    output: "947"
+    name: "Conv_341"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "947"
+    output: "948"
+    name: "Relu_342"
+    op_type: "Relu"
+  }
+  node {
+    input: "948"
+    input: "scratch.refinenet2.resConfUnit2.conv2.weight"
+    input: "scratch.refinenet2.resConfUnit2.conv2.bias"
+    output: "949"
+    name: "Conv_343"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "949"
+    input: "945"
+    output: "950"
+    name: "Add_344"
+    op_type: "Add"
+  }
+  node {
+    output: "954"
+    name: "Constant_345"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 0
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "950"
+    input: "954"
+    input: "1235"
+    output: "955"
+    name: "Resize_346"
+    op_type: "Resize"
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "align_corners"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+  }
+  node {
+    input: "955"
+    input: "scratch.refinenet2.out_conv.weight"
+    input: "scratch.refinenet2.out_conv.bias"
+    output: "956"
+    name: "Conv_347"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "908"
+    output: "957"
+    name: "Relu_348"
+    op_type: "Relu"
+  }
+  node {
+    input: "957"
+    input: "scratch.refinenet1.resConfUnit1.conv1.weight"
+    input: "scratch.refinenet1.resConfUnit1.conv1.bias"
+    output: "958"
+    name: "Conv_349"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "958"
+    output: "959"
+    name: "Relu_350"
+    op_type: "Relu"
+  }
+  node {
+    input: "959"
+    input: "scratch.refinenet1.resConfUnit1.conv2.weight"
+    input: "scratch.refinenet1.resConfUnit1.conv2.bias"
+    output: "960"
+    name: "Conv_351"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "960"
+    input: "908"
+    output: "961"
+    name: "Add_352"
+    op_type: "Add"
+  }
+  node {
+    input: "956"
+    input: "961"
+    output: "962"
+    name: "Add_353"
+    op_type: "Add"
+  }
+  node {
+    input: "962"
+    output: "963"
+    name: "Relu_354"
+    op_type: "Relu"
+  }
+  node {
+    input: "963"
+    input: "scratch.refinenet1.resConfUnit2.conv1.weight"
+    input: "scratch.refinenet1.resConfUnit2.conv1.bias"
+    output: "964"
+    name: "Conv_355"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "964"
+    output: "965"
+    name: "Relu_356"
+    op_type: "Relu"
+  }
+  node {
+    input: "965"
+    input: "scratch.refinenet1.resConfUnit2.conv2.weight"
+    input: "scratch.refinenet1.resConfUnit2.conv2.bias"
+    output: "966"
+    name: "Conv_357"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "966"
+    input: "962"
+    output: "967"
+    name: "Add_358"
+    op_type: "Add"
+  }
+  node {
+    output: "971"
+    name: "Constant_359"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 0
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "967"
+    input: "971"
+    input: "1236"
+    output: "972"
+    name: "Resize_360"
+    op_type: "Resize"
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "align_corners"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+  }
+  node {
+    input: "972"
+    input: "scratch.refinenet1.out_conv.weight"
+    input: "scratch.refinenet1.out_conv.bias"
+    output: "973"
+    name: "Conv_361"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "973"
+    input: "scratch.output_conv.0.weight"
+    input: "scratch.output_conv.0.bias"
+    output: "974"
+    name: "Conv_362"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "978"
+    name: "Constant_363"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 0
+        data_type: 1
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "974"
+    input: "978"
+    input: "1237"
+    output: "979"
+    name: "Resize_364"
+    op_type: "Resize"
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "pytorch_half_pixel"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+  }
+  node {
+    input: "979"
+    input: "scratch.output_conv.2.weight"
+    input: "scratch.output_conv.2.bias"
+    output: "980"
+    name: "Conv_365"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "980"
+    output: "981"
+    name: "Relu_366"
+    op_type: "Relu"
+  }
+  node {
+    input: "981"
+    input: "scratch.output_conv.4.weight"
+    input: "scratch.output_conv.4.bias"
+    output: "982"
+    name: "Conv_367"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "982"
+    output: "983"
+    name: "Relu_368"
+    op_type: "Relu"
+  }
+  node {
+    input: "983"
+    output: "output"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 1
+      type: INTS
+    }
+  }
+  initializer {
+      dims: 24
+      data_type: 1
+      name: "1000"
+  }
+  initializer {
+      dims: 144
+      dims: 24
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1002"
+  }
+  initializer {
+      dims: 144
+      data_type: 1
+      name: "1003"
+  }
+  initializer {
+      dims: 144
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1005"
+  }
+  initializer {
+      dims: 144
+      data_type: 1
+      name: "1006"
+  }
+  initializer {
+      dims: 32
+      dims: 144
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1008"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "1009"
+  }
+  initializer {
+      dims: 192
+      dims: 32
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1011"
+  }
+  initializer {
+      dims: 192
+      data_type: 1
+      name: "1012"
+  }
+  initializer {
+      dims: 192
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1014"
+  }
+  initializer {
+      dims: 192
+      data_type: 1
+      name: "1015"
+  }
+  initializer {
+      dims: 32
+      dims: 192
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1017"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "1018"
+  }
+  initializer {
+      dims: 192
+      dims: 32
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1020"
+  }
+  initializer {
+      dims: 192
+      data_type: 1
+      name: "1021"
+  }
+  initializer {
+      dims: 192
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1023"
+  }
+  initializer {
+      dims: 192
+      data_type: 1
+      name: "1024"
+  }
+  initializer {
+      dims: 32
+      dims: 192
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1026"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "1027"
+  }
+  initializer {
+      dims: 192
+      dims: 32
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1029"
+  }
+  initializer {
+      dims: 192
+      data_type: 1
+      name: "1030"
+  }
+  initializer {
+      dims: 192
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1032"
+  }
+  initializer {
+      dims: 192
+      data_type: 1
+      name: "1033"
+  }
+  initializer {
+      dims: 48
+      dims: 192
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1035"
+  }
+  initializer {
+      dims: 48
+      data_type: 1
+      name: "1036"
+  }
+  initializer {
+      dims: 288
+      dims: 48
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1038"
+  }
+  initializer {
+      dims: 288
+      data_type: 1
+      name: "1039"
+  }
+  initializer {
+      dims: 288
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1041"
+  }
+  initializer {
+      dims: 288
+      data_type: 1
+      name: "1042"
+  }
+  initializer {
+      dims: 48
+      dims: 288
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1044"
+  }
+  initializer {
+      dims: 48
+      data_type: 1
+      name: "1045"
+  }
+  initializer {
+      dims: 288
+      dims: 48
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1047"
+  }
+  initializer {
+      dims: 288
+      data_type: 1
+      name: "1048"
+  }
+  initializer {
+      dims: 288
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1050"
+  }
+  initializer {
+      dims: 288
+      data_type: 1
+      name: "1051"
+  }
+  initializer {
+      dims: 48
+      dims: 288
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1053"
+  }
+  initializer {
+      dims: 48
+      data_type: 1
+      name: "1054"
+  }
+  initializer {
+      dims: 288
+      dims: 48
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1056"
+  }
+  initializer {
+      dims: 288
+      data_type: 1
+      name: "1057"
+  }
+  initializer {
+      dims: 288
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1059"
+  }
+  initializer {
+      dims: 288
+      data_type: 1
+      name: "1060"
+  }
+  initializer {
+      dims: 96
+      dims: 288
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1062"
+  }
+  initializer {
+      dims: 96
+      data_type: 1
+      name: "1063"
+  }
+  initializer {
+      dims: 576
+      dims: 96
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1065"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1066"
+  }
+  initializer {
+      dims: 576
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1068"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1069"
+  }
+  initializer {
+      dims: 96
+      dims: 576
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1071"
+  }
+  initializer {
+      dims: 96
+      data_type: 1
+      name: "1072"
+  }
+  initializer {
+      dims: 576
+      dims: 96
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1074"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1075"
+  }
+  initializer {
+      dims: 576
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1077"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1078"
+  }
+  initializer {
+      dims: 96
+      dims: 576
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1080"
+  }
+  initializer {
+      dims: 96
+      data_type: 1
+      name: "1081"
+  }
+  initializer {
+      dims: 576
+      dims: 96
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1083"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1084"
+  }
+  initializer {
+      dims: 576
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1086"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1087"
+  }
+  initializer {
+      dims: 96
+      dims: 576
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1089"
+  }
+  initializer {
+      dims: 96
+      data_type: 1
+      name: "1090"
+  }
+  initializer {
+      dims: 576
+      dims: 96
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1092"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1093"
+  }
+  initializer {
+      dims: 576
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1095"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1096"
+  }
+  initializer {
+      dims: 96
+      dims: 576
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1098"
+  }
+  initializer {
+      dims: 96
+      data_type: 1
+      name: "1099"
+  }
+  initializer {
+      dims: 576
+      dims: 96
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1101"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1102"
+  }
+  initializer {
+      dims: 576
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1104"
+  }
+  initializer {
+      dims: 576
+      data_type: 1
+      name: "1105"
+  }
+  initializer {
+      dims: 136
+      dims: 576
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1107"
+  }
+  initializer {
+      dims: 136
+      data_type: 1
+      name: "1108"
+  }
+  initializer {
+      dims: 816
+      dims: 136
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1110"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1111"
+  }
+  initializer {
+      dims: 816
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1113"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1114"
+  }
+  initializer {
+      dims: 136
+      dims: 816
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1116"
+  }
+  initializer {
+      dims: 136
+      data_type: 1
+      name: "1117"
+  }
+  initializer {
+      dims: 816
+      dims: 136
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1119"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1120"
+  }
+  initializer {
+      dims: 816
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1122"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1123"
+  }
+  initializer {
+      dims: 136
+      dims: 816
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1125"
+  }
+  initializer {
+      dims: 136
+      data_type: 1
+      name: "1126"
+  }
+  initializer {
+      dims: 816
+      dims: 136
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1128"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1129"
+  }
+  initializer {
+      dims: 816
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1131"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1132"
+  }
+  initializer {
+      dims: 136
+      dims: 816
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1134"
+  }
+  initializer {
+      dims: 136
+      data_type: 1
+      name: "1135"
+  }
+  initializer {
+      dims: 816
+      dims: 136
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1137"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1138"
+  }
+  initializer {
+      dims: 816
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1140"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1141"
+  }
+  initializer {
+      dims: 136
+      dims: 816
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1143"
+  }
+  initializer {
+      dims: 136
+      data_type: 1
+      name: "1144"
+  }
+  initializer {
+      dims: 816
+      dims: 136
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1146"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1147"
+  }
+  initializer {
+      dims: 816
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1149"
+  }
+  initializer {
+      dims: 816
+      data_type: 1
+      name: "1150"
+  }
+  initializer {
+      dims: 232
+      dims: 816
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1152"
+  }
+  initializer {
+      dims: 232
+      data_type: 1
+      name: "1153"
+  }
+  initializer {
+      dims: 1392
+      dims: 232
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1155"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1156"
+  }
+  initializer {
+      dims: 1392
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1158"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1159"
+  }
+  initializer {
+      dims: 232
+      dims: 1392
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1161"
+  }
+  initializer {
+      dims: 232
+      data_type: 1
+      name: "1162"
+  }
+  initializer {
+      dims: 1392
+      dims: 232
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1164"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1165"
+  }
+  initializer {
+      dims: 1392
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1167"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1168"
+  }
+  initializer {
+      dims: 232
+      dims: 1392
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1170"
+  }
+  initializer {
+      dims: 232
+      data_type: 1
+      name: "1171"
+  }
+  initializer {
+      dims: 1392
+      dims: 232
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1173"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1174"
+  }
+  initializer {
+      dims: 1392
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1176"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1177"
+  }
+  initializer {
+      dims: 232
+      dims: 1392
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1179"
+  }
+  initializer {
+      dims: 232
+      data_type: 1
+      name: "1180"
+  }
+  initializer {
+      dims: 1392
+      dims: 232
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1182"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1183"
+  }
+  initializer {
+      dims: 1392
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1185"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1186"
+  }
+  initializer {
+      dims: 232
+      dims: 1392
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1188"
+  }
+  initializer {
+      dims: 232
+      data_type: 1
+      name: "1189"
+  }
+  initializer {
+      dims: 1392
+      dims: 232
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1191"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1192"
+  }
+  initializer {
+      dims: 1392
+      dims: 1
+      dims: 5
+      dims: 5
+      data_type: 1
+      name: "1194"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1195"
+  }
+  initializer {
+      dims: 232
+      dims: 1392
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1197"
+  }
+  initializer {
+      dims: 232
+      data_type: 1
+      name: "1198"
+  }
+  initializer {
+      dims: 1392
+      dims: 232
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1200"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1201"
+  }
+  initializer {
+      dims: 1392
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "1203"
+  }
+  initializer {
+      dims: 1392
+      data_type: 1
+      name: "1204"
+  }
+  initializer {
+      dims: 384
+      dims: 1392
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "1206"
+  }
+  initializer {
+      dims: 384
+      data_type: 1
+      name: "1207"
+  }
+  initializer {
+      dims: 1
+      data_type: 7
+      name: "1211"
+  }
+  initializer {
+      dims: 4
+      data_type: 7
+      name: "1212"
+  }
+  initializer {
+      dims: 1
+      data_type: 7
+      name: "1216"
+  }
+  initializer {
+      dims: 4
+      data_type: 7
+      name: "1217"
+  }
+  initializer {
+      dims: 1
+      data_type: 7
+      name: "1221"
+  }
+  initializer {
+      dims: 4
+      data_type: 7
+      name: "1222"
+  }
+  initializer {
+      dims: 1
+      data_type: 7
+      name: "1226"
+  }
+  initializer {
+      dims: 4
+      data_type: 7
+      name: "1227"
+  }
+  initializer {
+      dims: 1
+      data_type: 7
+      name: "1231"
+  }
+  initializer {
+      dims: 4
+      data_type: 7
+      name: "1232"
+  }
+  initializer {
+      dims: 4
+      data_type: 1
+      name: "1233"
+  }
+  initializer {
+      dims: 4
+      data_type: 1
+      name: "1234"
+  }
+  initializer {
+      dims: 4
+      data_type: 1
+      name: "1235"
+  }
+  initializer {
+      dims: 4
+      data_type: 1
+      name: "1236"
+  }
+  initializer {
+      dims: 4
+      data_type: 1
+      name: "1237"
+  }
+  initializer {
+      dims: 32
+      dims: 3
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "993"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "994"
+  }
+  initializer {
+      dims: 32
+      dims: 1
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "996"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "997"
+  }
+  initializer {
+      dims: 24
+      dims: 32
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "999"
+  }
+  initializer {
+      dims: 64
+      dims: 32
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.layer1_rn.weight"
+  }
+  initializer {
+      dims: 128
+      dims: 48
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.layer2_rn.weight"
+  }
+  initializer {
+      dims: 256
+      dims: 136
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.layer3_rn.weight"
+  }
+  initializer {
+      dims: 512
+      dims: 384
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.layer4_rn.weight"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "scratch.output_conv.0.bias"
+  }
+  initializer {
+      dims: 32
+      dims: 64
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.output_conv.0.weight"
+  }
+  initializer {
+      dims: 32
+      data_type: 1
+      name: "scratch.output_conv.2.bias"
+  }
+  initializer {
+      dims: 32
+      dims: 32
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.output_conv.2.weight"
+  }
+  initializer {
+      dims: 1
+      data_type: 1
+      name: "scratch.output_conv.4.bias"
+  }
+  initializer {
+      dims: 1
+      dims: 32
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "scratch.output_conv.4.weight"
+  }
+  initializer {
+      dims: 64
+      data_type: 1
+      name: "scratch.refinenet1.out_conv.bias"
+  }
+  initializer {
+      dims: 64
+      dims: 64
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "scratch.refinenet1.out_conv.weight"
+  }
+  initializer {
+      dims: 64
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit1.conv1.bias"
+  }
+  initializer {
+      dims: 64
+      dims: 64
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit1.conv1.weight"
+  }
+  initializer {
+      dims: 64
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit1.conv2.bias"
+  }
+  initializer {
+      dims: 64
+      dims: 64
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit1.conv2.weight"
+  }
+  initializer {
+      dims: 64
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit2.conv1.bias"
+  }
+  initializer {
+      dims: 64
+      dims: 64
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit2.conv1.weight"
+  }
+  initializer {
+      dims: 64
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit2.conv2.bias"
+  }
+  initializer {
+      dims: 64
+      dims: 64
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet1.resConfUnit2.conv2.weight"
+  }
+  initializer {
+      dims: 64
+      data_type: 1
+      name: "scratch.refinenet2.out_conv.bias"
+  }
+  initializer {
+      dims: 64
+      dims: 128
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "scratch.refinenet2.out_conv.weight"
+  }
+  initializer {
+      dims: 128
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit1.conv1.bias"
+  }
+  initializer {
+      dims: 128
+      dims: 128
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit1.conv1.weight"
+  }
+  initializer {
+      dims: 128
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit1.conv2.bias"
+  }
+  initializer {
+      dims: 128
+      dims: 128
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit1.conv2.weight"
+  }
+  initializer {
+      dims: 128
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit2.conv1.bias"
+  }
+  initializer {
+      dims: 128
+      dims: 128
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit2.conv1.weight"
+  }
+  initializer {
+      dims: 128
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit2.conv2.bias"
+  }
+  initializer {
+      dims: 128
+      dims: 128
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet2.resConfUnit2.conv2.weight"
+  }
+  initializer {
+      dims: 128
+      data_type: 1
+      name: "scratch.refinenet3.out_conv.bias"
+  }
+  initializer {
+      dims: 128
+      dims: 256
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "scratch.refinenet3.out_conv.weight"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit1.conv1.bias"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit1.conv1.weight"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit1.conv2.bias"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit1.conv2.weight"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit2.conv1.bias"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit2.conv1.weight"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit2.conv2.bias"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet3.resConfUnit2.conv2.weight"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "scratch.refinenet4.out_conv.bias"
+  }
+  initializer {
+      dims: 256
+      dims: 512
+      dims: 1
+      dims: 1
+      data_type: 1
+      name: "scratch.refinenet4.out_conv.weight"
+  }
+  initializer {
+      dims: 512
+      data_type: 1
+      name: "scratch.refinenet4.resConfUnit2.conv1.bias"
+  }
+  initializer {
+      dims: 512
+      dims: 512
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet4.resConfUnit2.conv1.weight"
+  }
+  initializer {
+      dims: 512
+      data_type: 1
+      name: "scratch.refinenet4.resConfUnit2.conv2.bias"
+  }
+  initializer {
+      dims: 512
+      dims: 512
+      dims: 3
+      dims: 3
+      data_type: 1
+      name: "scratch.refinenet4.resConfUnit2.conv2.weight"
+  }
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_param: "x"
+          }
+          dim {
+            dim_param: "y"
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "output"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_param: "x"
+          }
+          dim {
+            dim_param: "y"
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  version: 11
+}
