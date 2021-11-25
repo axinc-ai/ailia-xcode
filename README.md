@@ -8,28 +8,36 @@ Xcode 11.3
 
 ## Setup
 
-Download u2net_opset11.onnx in ./u2net folder.
+Download u2net_opset11.onnx and midas_v21_small.onnx to ./u2net folder.
 
 ```
 wget https://storage.googleapis.com/ailia-models/u2net/u2net_opset11.onnx
+wget https://storage.googleapis.com/ailia-models/midas/midas_v2.1_small.onnx
 ```
 
-Put ailia-1.2.4-xc7.a to ./u2net folder.
+Download libailia.a from [trial version of ailia SDK](https://ailia.jp/en/).
+Put libailia.a to ./u2net folder.
 
 Expected Layout
 
 ```
 ./u2net.xcodeproj
-./u2net/ailia-1.2.4-xc7.a
+./u2net/libailia.a
 ./u2net/u2net_opset11.onnx
 ./u2net/u2net_opset11.prototxt
+./u2net/midas_v21_small.onnx
+./u2net/midas_v21_small.prototxt
 ```
 
 ## Function
 
-Perform background cropping on the input image using u2net.
+Perform background removal using u2net. (#ifndef MIDAS)
 
-![demo](demo.png)
+![demo_u2net](demo_u2net.png)
+
+Perform depth estimation using midas. (#ifdef MIDAS)
+
+![demo_u2net](demo_midas.png)
 
 ## Implementation Detail
 

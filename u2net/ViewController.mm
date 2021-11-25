@@ -17,6 +17,8 @@
 
 #define LOW_MEMORY_MODE
 
+//#define MIDAS
+
 @interface ViewController ()
 
 @end
@@ -24,9 +26,14 @@
 @implementation ViewController
 
 static void ailia_u2net(unsigned char *rgb,unsigned int width,unsigned int height){
+#ifdef MIDAS
+    NSString* path1 = [[NSBundle mainBundle] pathForResource:@"midas_v21_small" ofType:@"prototxt"];
+    NSString* path2 = [[NSBundle mainBundle] pathForResource:@"midas_v21_small" ofType:@"onnx"];
+#else
     NSString* path1 = [[NSBundle mainBundle] pathForResource:@"u2net_opset11" ofType:@"prototxt"];
     NSString* path2 = [[NSBundle mainBundle] pathForResource:@"u2net_opset11" ofType:@"onnx"];
-
+#endif
+    
     // net initialize
     struct AILIANetwork *net;
     int env_id = AILIA_ENVIRONMENT_ID_AUTO;
@@ -55,7 +62,8 @@ static void ailia_u2net(unsigned char *rgb,unsigned int width,unsigned int heigh
     }
 #endif
     
-    status = ailiaOpenStreamFile(net, [path1 cStringUsingEncoding:1]);
+    //prototxt is optional
+     status = ailiaOpenStreamFile(net, [path1 cStringUsingEncoding:1]);
     if (status != AILIA_STATUS_SUCCESS) {
         PRINT_ERR("ailiaOpenStreamFile failed %d\n", status);
         PRINT_ERR("ailiaGetErrorDetail %s\n", ailiaGetErrorDetail(net));
@@ -70,6 +78,20 @@ static void ailia_u2net(unsigned char *rgb,unsigned int width,unsigned int heigh
         return;
     }
 
+#ifdef MIDAS
+    AILIAShape set_input_shape;
+    set_input_shape.x = 256;
+    set_input_shape.y = 256;
+    set_input_shape.z = 3;
+    set_input_shape.w = 1;
+    set_input_shape.dim = 4;
+    status = ailiaSetInputShape(net, &set_input_shape, AILIA_SHAPE_VERSION);
+    if (status != AILIA_STATUS_SUCCESS) {
+        PRINT_ERR("ailiaSetInputShape failed %d\n", status);
+        return;
+    }
+#endif
+    
     AILIAShape input_shape;
     status = ailiaGetInputShape(net, &input_shape, AILIA_SHAPE_VERSION);
     if (status != AILIA_STATUS_SUCCESS) {
@@ -126,7 +148,8 @@ static int preprocess(float *dst,unsigned int dst_width,unsigned int dst_height,
     const float std[3] = {0.229, 0.224, 0.225};
 
     //src : channel last (bgr order)
-    //dst : channel first (bgr order)
+    //dst : channel first (bgr order) (u2net)
+    //      channel first (rgb order) (midas)
 
     for(int y=0;y<dst_height;y++){
         for(int x=0;x<dst_width;x++){
@@ -148,8 +171,11 @@ static int preprocess(float *dst,unsigned int dst_width,unsigned int dst_height,
                 unsigned char v3=src[sy2*src_width*4+sx1*4+i];
                 unsigned char v4=src[sy2*src_width*4+sx2*4+i];
                 unsigned char v=(v1*(1-a)+v2*a)*(1-b)+(v3*(1-a)+v4*a)*b;
-                
+#ifdef MIDAS
+                dst[y*dst_width+x+(3-1-i)*dst_width*dst_height]=(v/255.0 - mean[i]) / std[i];
+#else
                 dst[y*dst_width+x+i*dst_width*dst_height]=(1.0*v/max_value - mean[i]) / std[i];
+#endif
             }
         }
     }
@@ -193,11 +219,21 @@ static int postprocess(unsigned char *dst,unsigned int dst_width,unsigned int ds
             float v4=src[sy2*src_width+sx2];
             float v=(v1*(1-a)+v2*a)*(1-b)+(v3*(1-a)+v4*a)*b;
 
+#ifdef MIDAS
+            int out_bit = 8;
+            float max_val = pow(2,out_bit)-1;
+            float depth_value = max_val * (v - min) / (max - min);
+
+            for(int i=0;i<3;i++){
+                dst[y*dst_width*4+x*4+i] = (int)(depth_value);
+            }
+#else
             float alpha_value = ((v-min) / (max-min));
 
             for(int i=0;i<3;i++){
                 dst[y*dst_width*4+x*4+i] *= alpha_value;
             }
+#endif
         }
     }
 
